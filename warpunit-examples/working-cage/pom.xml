@@ -11,6 +11,7 @@
     <modules>
       <module>working-cage</module>
       <module>working-cage-ear</module>
+      <module>working-cage-war</module>
       <module>working-cage-test</module>
     </modules>
 </project>

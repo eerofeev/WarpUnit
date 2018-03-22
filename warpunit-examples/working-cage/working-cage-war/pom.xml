@@ -1,0 +1,47 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.dcm4che.examples</groupId>
+		<artifactId>working-cage-parent</artifactId>
+		<version>alpha-SNAPSHOT</version>
+	</parent>
+	<artifactId>working-cage-war</artifactId>
+	<packaging>war</packaging>
+	<version>${projectVersion}</version>
+	<properties>
+		<projectVersion>alpha-SNAPSHOT</projectVersion>
+	</properties>
+	<dependencies>
+
+		<dependency>
+			<groupId>javax</groupId>
+			<artifactId>javaee-api</artifactId>
+			<version>7.0</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.dcm4che.examples</groupId>
+			<artifactId>working-cage</artifactId>
+			<version>alpha-SNAPSHOT</version>
+		</dependency>
+
+	</dependencies>
+	
+	<profiles>
+		<profile>
+			<id>warpunit</id>
+			<dependencies>
+				<dependency>
+					<groupId>org.dcm4che</groupId>
+					<artifactId>warpunit-core</artifactId>
+					<version>alpha-SNAPSHOT</version>
+				</dependency>			
+			</dependencies>
+			<properties>
+            	<projectVersion>alpha-TEST-ONLY-SNAPSHOT</projectVersion>
+        	</properties>
+		</profile>
+	</profiles>
+</project>
