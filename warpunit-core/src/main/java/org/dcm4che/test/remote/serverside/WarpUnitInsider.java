@@ -73,6 +73,11 @@ public class WarpUnitInsider implements WarpUnitInsiderREST {
     @SuppressWarnings("unchecked")
     @Override
     public String warpAndRun(RemoteRequestJSON requestJSON) {
+    	
+    	if(!Boolean.getBoolean("warpunit.enabled")) {
+    		RuntimeException ex = new RuntimeException("Warpunit ist disabled. To enable it, set the system property warpunit.enabled=true");
+    		return Base64.toBase64(DeSerializer.serialize(ex));
+    	}
 
         // unbase64 the bytecode
         Map<String, byte[]> classNameToByteCode = new HashMap<>();
